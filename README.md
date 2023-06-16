@@ -29,7 +29,7 @@ Before you begin, ensure that you have the following prerequisites installed:
 1. Ensure that you have a running Kubernetes cluster and the `kubectl` command-line tool configured to access the cluster.
 2. Build the Docker image for the Django application: `docker build -t django-app .`
 3. Push the Docker image to a container registry accessible by your Kubernetes cluster.
-   Alternatively, you can use this ready container `m0h77/django-app` available at https://hub.docker.com/r/m0h77/django-app.
+   Alternatively, you can use this ready container `m0h77/django-app:latest` available at https://hub.docker.com/r/m0h77/django-app.
 4. Update the `kubernetes/<deployment>.yaml` files with the appropriate image and environment variables.
 5. Apply the Kubernetes resources to deploy the application and database:
    - `kubectl apply -f django-deployment.yaml`
