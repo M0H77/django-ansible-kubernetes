@@ -20,7 +20,7 @@ Before you begin, ensure that you have the following prerequisites installed:
 1. Clone this repository.
 2. Navigate to the `ansible` folder.
 3. Update the `hosts` file with the target CentOS server's IP address or hostname and the necessary configuration variables, such as Django settings and database credentials.
-4. Run the `./ansible.sh system.yaml` command to create a new user and SSH key and add it to your Git repo as a deployment key.
+4. Run `./ansible.sh system.yaml`  to create a new user and SSH key and add it to your Git repo as a deployment key.
 5. Run `/ansible.sh packages.yaml` to update and install packages.
 6. Run `./ansible.sh postgresql.yaml` to set up the PostgreSQL database.
 7. Run `./ansible.sh django.yaml` to deploy the Django app.
@@ -30,7 +30,7 @@ Before you begin, ensure that you have the following prerequisites installed:
 2. Build the Docker image for the Django application: `docker build -t django-app .`
 3. Push the Docker image to a container registry accessible by your Kubernetes cluster.
    Alternatively, you can use this ready container `m0h77/django-app:latest` available at https://hub.docker.com/r/m0h77/django-app.
-4. Update the `kubernetes/deployment.yml` file with the appropriate image and environment variables.
+4. Update the `kubernetes/<deployment>.yaml` files with the appropriate image and environment variables.
 5. Apply the Kubernetes resources to deploy the application and database:
    - `kubectl apply -f django-deployment.yaml`
    - `kubectl apply -f django-service.yaml`
