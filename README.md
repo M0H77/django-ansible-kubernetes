@@ -9,8 +9,10 @@ Before you begin, ensure that you have the following prerequisites installed:
 - Docker
 - Kubernetes (kubectl and a Kubernetes cluster)
 
-## Note
+## Notes
 - A `.env` file is included inside the djangoApp/djangoApp/ folder.
+- The `django.yaml` ansible playbook is configured to use this repository
+- The `django-deployment.yaml` kubernetes deployment file is configured to use this django container m0h77/django-app:latest` available at https://hub.docker.com/r/m0h77/django-app.
 
 ## Deployment Steps
 
@@ -29,7 +31,7 @@ Before you begin, ensure that you have the following prerequisites installed:
 3. Push the Docker image to a container registry accessible by your Kubernetes cluster.
    Alternatively, you can use this ready container `m0h77/django-app:latest` available at https://hub.docker.com/r/m0h77/django-app.
 4. Update the `kubernetes/deployment.yml` file with the appropriate image and environment variables.
-5. Apply the Kubernetes resources to deploy the application and database: `kubectl apply -f kubernetes/` or run individually:
+5. Apply the Kubernetes resources to deploy the application and database:
    - `kubectl apply -f django-deployment.yaml`
    - `kubectl apply -f django-service.yaml`
    - `kubectl apply -f postgres-deployment.yaml`
