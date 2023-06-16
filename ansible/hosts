@@ -1,0 +1,14 @@
+all:
+    hosts:
+        CentOS
+    vars:
+        repo_url: https://github.com/M0H77
+        repo: django-with-ansible
+        home_dir: /home/alex
+        repo_dir: "{{ home_dir }}/{{ repo }}"
+        django_dir: "{{ repo_dir }}/djangoApp"
+        static_dir: "{{ home_dir }}/static"
+        django_project: djangoApp"
+        dbname: usersdb
+        dbuser: postgres
+        dbpassword: "password1!"

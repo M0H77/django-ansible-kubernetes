@@ -1,0 +1,20 @@
+---
+- hosts: all
+  become: yes
+  become_user: alex
+  gather_facts: no
+
+  tasks:
+  - name: pull branch master
+    git:
+      repo={{ repo_url }}/{{ repo }}.git
+      dest={{ repo_dir }}
+      accept_hostkey=yes
+
+  - name: Start Django development server
+    command: python {{ django_dir }}/manage.py runserver 0.0.0.0:8000
+    async: 5000
+    poll: 0
+
+  - name: Run Django database migrations
+    command: python {{ django_dir }}/manage.py migrate

@@ -1,0 +1,18 @@
+---
+- hosts: all
+  gather_facts: no
+  tasks:
+    - name: install updates
+      yum: name=* state=latest
+    - name: Installing required packages
+      yum: 
+        name:
+         - postgresql-server
+         - git
+         - python-pip
+    - name: Install Python packages
+      pip:
+        name:
+          - psycopg2-binary
+          - django
+          - django-environ
