@@ -3,7 +3,7 @@ all:
         CentOS
     vars:
         repo_url: https://github.com/M0H77
-        repo: django-with-ansible
+        repo: django-ansible-kubernetes
         home_dir: /home/alex
         repo_dir: "{{ home_dir }}/{{ repo }}"
         django_dir: "{{ repo_dir }}/djangoApp"
